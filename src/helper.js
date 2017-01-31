@@ -7,6 +7,7 @@ export const calculateWinScore = data => {
   return total;
 }
 
+// generate two dimensional array for board
 export const generateBoard = () => {
   let board = [];
   for(let i = 0; i < 10; i++) {

@@ -1,3 +1,11 @@
+/** @file index.js
+    @brief a simple react battleship game
+
+    @author Daniel Lin
+    @date Jan/21/2017 */
+
+
+
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -26,7 +34,8 @@ class App extends Component {
     }
     
     this.winScore = calculateWinScore(data);
-
+    
+    // make sure all the context is correct
     this.handleClick = this.handleClick.bind(this);
     this.restart = this.restart.bind(this);
   }
@@ -38,13 +47,14 @@ class App extends Component {
       shipScore: generateShipSize(data)
     }
     this.setState(newState);
-
   }
 
   handleClick(x, y) {
+    // avoid state mutation
     const board = this.state.board.slice();
     const newShipScore = Object.assign({}, this.state.shipScore);
     const value = board[x][y];
+    
     if(this.state.totalScore === this.winScore) {
       return;
     }
@@ -56,20 +66,19 @@ class App extends Component {
 
       newShipScore[value]--;
       let newScore = this.state.totalScore + 1;
+      
       board[x][y] = 'hit';
+      
       this.setState({
         board,
         shipScore: newShipScore,
         totalScore: newScore,
       })
-      if(this.state.totalScore === this.winScore) {
-          alert('you win');
-      }
+
     } else {
       board[x][y] = 'miss';
       this.setState({ board });
     }    
-
   }
 
   render() {

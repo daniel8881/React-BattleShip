@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+#root {
+  width: 100%;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -126,7 +130,33 @@ body {
 }
 
 /* media query */
-@media (max-width: 770px) {
+@media (max-width: 1100px) {
+  .board {
+    width: 450px;
+  }
+
+  .board__square {
+    width: 45px;
+    height: 45px;
+  }
+
+  .board__square img {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  /* info */
+
+
+  .info__scoreboard {
+    width: 300px;
+    margin-bottom: 20px;
+  }
+
+}
+
+@media (max-width: 800px)  {
     
 
     .game {
@@ -204,7 +234,7 @@ body {
 
 }
 
-@media (max-width: 375px) {
+@media (max-width: 640px)  {
    html,body {
     margin: 0;
     padding: 0;
