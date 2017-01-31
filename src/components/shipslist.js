@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ShipInfo from './shipinfo';
 
-export default props => {
+const ShipList =  props => {
   const renderShipInfo = () => {
     const ships = Object.keys(props.shipscore);
     return ships.map(ship => {
@@ -15,3 +15,9 @@ export default props => {
     </div>
   )
 }
+
+ShipList.propTypes = {
+  shipscore: PropTypes.object.isRequired
+};
+
+export default ShipList;

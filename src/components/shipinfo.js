@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export default class ShipInfo extends Component {
+class ShipInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,11 +14,11 @@ export default class ShipInfo extends Component {
     let j = 0;
     let nextId = 0;
     for(i = 0; i < this.props.score; i++) {
-      imgList.push(<img src={`/img/point.png`} key={nextId++} />);
+      imgList.push(<img src={`/img/point.png`} key={nextId++} alt='remain ship size'/>);
     }
  
     for(j = 0; j < this.state.size - i; j++) {
-      imgList.unshift(<img src={`/img/hit.png`} key={nextId++} />);
+      imgList.unshift(<img src={`/img/hit.png`} key={nextId++} alt='numbers of hitted'/>);
     }
     
     return imgList;
@@ -28,7 +28,7 @@ export default class ShipInfo extends Component {
     return (
       <div className='info__shipinfo'>
         <div className='info__shipinfo__image'>
-          <img src={`/img/${this.props.shipname}.png`} />
+          <img src={`/img/${this.props.shipname}.png`} alt={this.props.shipname} />
         </div>
         <div className='info__shipinfo__hitted'>
           {this.renderHitted()}
@@ -37,3 +37,11 @@ export default class ShipInfo extends Component {
     )
   }
 }
+
+ShipInfo.propTypes = {
+  shipname: PropTypes.string.isRequired,
+  score: PropTypes.number.isRequired
+};
+
+
+export default ShipInfo;

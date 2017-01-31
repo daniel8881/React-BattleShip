@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -44,9 +46,10 @@ body {
 
 .board {
   width: 550px;
-  border: 4px solid #FDAF2A;
+  border: 5px solid #FDAF2A;
   float: left;
   margin-right: 20px;
+
 }
 
 .board__square {
@@ -245,6 +248,15 @@ body {
       display: block;
       width: 100%;
    }
+
+   .info__score h1,
+   .info__panel h2 {
+      font-size: 1em;
+    }
+
+    .info__panel {
+      padding: 5px;
+    }
 
     .info__shipinfo__image img {
       width: 70px;

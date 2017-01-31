@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Square from './square';
 
 
-export default props => {
+const Board = props => {
   const renderSquares = () => {
     let squares = [];
     let key = 0;
@@ -20,3 +20,10 @@ export default props => {
     </div>
   )
 };
+
+Board.propTypes = {
+  value: PropTypes.array.isRequired,
+  handleClick: PropTypes.func.isRequired
+};
+
+export default Board;

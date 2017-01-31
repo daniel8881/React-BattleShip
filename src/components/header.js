@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-export default props => {
+const Header =  props => {
   return (
     <div className='header'>
       <h2 className='header__msg'>{props.msg}</h2>
@@ -11,4 +11,11 @@ export default props => {
       </div>
     </div>
   )
-}
+};
+
+Header.propTypes = {
+  msg: PropTypes.string.isRequired,
+  restart: PropTypes.func.isRequired
+};
+
+export default Header;

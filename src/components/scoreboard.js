@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 
-export default ({score}) => {
+const ScoreBoard =  ({score}) => {
   return (
     <div className='info__scoreboard'>
       <div className='info__panel--orange info__panel'>
@@ -22,4 +22,10 @@ export default ({score}) => {
       </div>
     </div>
   )
-}
+};
+
+ScoreBoard.propTypes = {
+  score: PropTypes.number.isRequired
+};
+
+export default ScoreBoard;
