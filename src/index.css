@@ -1,0 +1,262 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  width: 100%;
+  background-color: #9497FC;
+  margin: 0 0 20px;
+  color: #fff;
+  text-align: center;
+}
+
+
+.header__msg {
+  padding: 0;
+  letter-spacing: 1.2px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.header__restart {
+  display: inline-block;
+  margin-right: 50px;
+  padding: 10px;
+  outline: none;
+  background-color: #30B69F;
+  cursor: pointer;
+  text-align: center;
+}
+
+.game {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Board */
+
+.board {
+  width: 550px;
+  border: 4px solid #FDAF2A;
+  float: left;
+  margin-right: 20px;
+}
+
+.board__square {
+  width: 55px;
+  height: 55px;
+  border: 1px solid #888;
+  float: left;
+  margin-right: -1px;
+  margin-top: -1px;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+}
+
+.board__square img {
+  width: 45px;
+  height: 45px;
+}
+
+
+.board::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/* info */
+
+.info {
+  float: left;
+}
+
+.info__scoreboard {
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+.info__panel {
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+}
+
+.info__score {
+  border-bottom: 1px solid black;
+}
+
+.info__score h1 {
+  font-size: 3.5em;
+}
+
+.info__panel--orange {
+  background-color: #FDAF2A;
+}
+
+.info__panel--green {
+  background-color: #30B69F;
+}
+
+
+.info__shipinfo__image img {
+  width: 230px;
+}
+
+.info__shipinfo__image, 
+.info__shipinfo__hitted {
+  display: inline-block;
+}
+
+.info__shipinfo__hitted img {
+  width: 20px;
+  height: 20px;
+}
+
+/* media query */
+@media (max-width: 770px) {
+    
+
+    .game {
+      width: 100%;
+      padding: 15px;
+    }
+
+    .board {
+      float: none;
+      margin: 20px auto;
+      width: 700px;
+     
+    }
+
+
+    .board__square {
+      width: 70px;
+      height: 70px;
+      border: 2px solid #888;
+      float: left;
+      margin-right: -1px;
+      margin-top: -1px;
+      vertical-align: middle;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    .board__square img {
+      width: 65px;
+      height: 65px;
+    }
+
+    .info {
+      float: none;
+      width: 700px;
+      margin: 0 auto;
+    }
+
+    .info__scoreboard {
+      width: 28%;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .info__shiplist {
+      display: inline-block;
+      width: 68%;
+      text-align: center;
+    }
+
+    .info__shipinfo {
+      float: left;
+      width: 50%;
+    }
+
+    .info__score h1 {
+      font-size: 2em;
+    }
+
+    .info__shipinfo__image,
+    .info__shipinfo__hitted {
+      width: 50%;
+    }
+
+
+    .info__shipinfo__image img {
+      width: 150px;
+      text-align: center;
+    }
+
+    .info__shipinfo__hitted img {
+      width: 15px;
+      height: 15px;
+    }
+
+}
+
+@media (max-width: 375px) {
+   html,body {
+    margin: 0;
+    padding: 0;
+   }
+
+   .game {
+    padding: 0;
+    background-color: #FDAF2A;
+   }
+
+   .header {
+      margin: 0;
+   }
+
+   .header__restart {
+      margin: 0 0 5px 0;
+    }
+
+   .board {
+    margin: 0 auto;
+    width: 350px; 
+
+   }
+
+   .board__square {
+      width: 35px;
+      height: 35px;
+    }
+
+    .board__square img {
+      width: 30px;
+      height: 30px;
+    }
+
+   .info {
+    width: 100%;
+   }
+
+   .info__scoreboard,
+   .info__shiplist {
+      display: block;
+      width: 100%;
+   }
+
+    .info__shipinfo__image img {
+      width: 70px;
+      text-align: center;
+    }
+
+    .info__shipinfo__hitted img {
+      width: 15px;
+      height: 15px;
+    }
+}
+
+
+
+
